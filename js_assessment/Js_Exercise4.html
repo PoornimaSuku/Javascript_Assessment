@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Select Type and Product</h2>
+        <script>
+        var ProductByCategory = { 
+
+    A: ["Apple","Grapes", "Orange","Strawberry"], 
+
+    B: ["Broccoli", "Cabbage", "Ginger", "Tomato", "Onion"], 
+
+
+} 
+function list(value) { 
+    if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>"; 
+    else { 
+        var options = ""; 
+        for (categoryId in ProductByCategory[value]) { 
+            options += "<option>" + ProductByCategory[value][categoryId] + "</option>"; 
+        } 
+        document.getElementById("category").innerHTML = options; 
+    } 
+} 
+        </script>
+        <select name="state" id="state" onChange="list(this.value);">
+            <option value="" disabled selected>Select Type</option>
+            <option value="A">Fruits</option>
+            <option value="B">Vegetables</option>
+        </select><br><br>
+        <select name="category" id="category">
+            <option value="" disabled selected>Select Product</option>
+        </select>
+    </body>
+</html>
